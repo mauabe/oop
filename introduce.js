@@ -13,7 +13,7 @@ function personFromPersonStore(name, age) {
 
 const sandra = personFromPersonStore('Sandra', 26);
 personStore.introduce = function(){
-  console.log('Hi, my name is ' + this.name)
+  console.log(`Hi, my name is ${this.name}`)
 }
 
 // Uncomment this line to check your work!

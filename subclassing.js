@@ -12,15 +12,21 @@ function userFactory(name, score) {
   return user;
 }
 
-
-const adminFunctionStore = new userFunctionStore; 
+const adminFunctionStore = {
+  sayType: function() {
+    console.log("I am a " + this.type);
+  }
+} 
 
 function adminFactory(name, score) {
-	this.name = name;
-	this.score = score;
+  let admin = Object.create(adminFunctionStore)
+  admin.type = "Admin";
+	admin.name = name;
+  admin.score = score;
+  return admin;
 }
 
-//Put code here for a method called sharePublicMessage() = function(){}
+adminFunctionStore.sharePublicMessage = function(){console.log('Welcome users!')}
 
 const adminFromFactory = adminFactory("Eva", 5);
 
